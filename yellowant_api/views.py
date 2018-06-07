@@ -163,7 +163,7 @@ def yellowant_oauth_redirect(request):
     #     access_token_url='https://dev36687.service-now.com/oauth_token.do',
     #     base_url='https://dev36687.service-now.com/',
     #     state='ankur')
-    #
+
 
 
     #redirect_uri = 'https://3cb6327e.ngrok.io/service-now-auth/'

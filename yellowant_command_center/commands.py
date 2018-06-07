@@ -11,30 +11,6 @@ import json
 
 
 
-
-# def oauth():
-#     global ACCESS_TOKEN
-#     url="https://dev36687.service-now.com/oauth_token.do"
-#     headers = {
-#         "Content-Type" : "application/x-www-form-urlencoded"
-#     }
-#     body={
-#         "grant_type" : "password",
-#         "client_id" : "86d1c83b765a130013e8b0e93ff96e8e",
-#         "client_secret" : "VMUnhyJ(B]",
-#         "username" : "admin",
-#         "password" : "FAY5twjw0KQk",
-#     }
-#     response=requests.post(url=url, headers=headers, data=body)
-#     print(type(response))
-#     response=response.json()
-#     print(type(response))
-#     print(response)
-#     ACCESS_TOKEN=response["access_token"]
-#     #print(requests.post(url=url, auth=('admin', 'FAY5twjw0KQk'), headers=headers, data=json.dumps(body)))
-
-
-
 def create_incident(args,user_integration):
     print("Inside create incident")
 
@@ -138,12 +114,25 @@ def get_incident(args,user_integration):
     field1.value = response.json()["result"]["priority"]
     attachment.attach_field(field1)
 
+    field1 = AttachmentFieldsClass()
+    field1.title = "Impact"
+    field1.value = response.json()["result"]["impact"]
+    attachment.attach_field(field1)
+
     button = MessageButtonsClass()
     button.text = "Modify State"
     button.value = "Modify State"
     button.name = "Modify State"
     button.command = {"service_application": str(user_integration.yellowant_integration_id), "function_name": "modifystate", "data": {"sys_id":sys_id},
                       "inputs":["state"]}
+    attachment.attach_button(button)
+
+    button = MessageButtonsClass()
+    button.text = "Change impact"
+    button.value = "Change impact"
+    button.name = "Change impact"
+    button.command = {"service_application": str(user_integration.yellowant_integration_id), "function_name": "changeimpact", "data": {"sys_id":sys_id},
+                      "inputs":["impact"]}
     attachment.attach_button(button)
 
 
@@ -186,12 +175,9 @@ def states(args,user_integration):
 
     m = MessageClass()
     data = {'list': []}
-
     data['list'].append({"State": 1 , "State-name": "New"})
     data['list'].append({"State": 2 , "State-name": "In Progress"})
     data['list'].append({"State": 3 , "State-name": "On Hold"})
-
-
     m.data = data
     return m
 
@@ -202,10 +188,30 @@ def show_impact(args,user_integration):
     data['list'].append({"Value": 1 , "name": "High"})
     data['list'].append({"Value": 2 , "name": "Medium"})
     data['list'].append({"Value": 3 , "name": "Low"})
-
-
     m.data = data
     return m
+
+def change_urgency(args,user_integration):
+    access_token_object = Servicenow_model.objects.get(user_integration=user_integration.id)
+    access_token = access_token_object.access_token
+
+    headers= {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json',
+        'Authorization' : 'Bearer '+ access_token
+    }
+    sys_id = args.get('sys_id')
+    impact = args.get('urgency')
+    body = {
+            "priority" : impact
+            }
+    url = "https://dev36687.service-now.com/api/now/table/incident/" + sys_id
+    response=requests.put(url=url,headers=headers,data=json.dumps(body))
+
+    message = MessageClass()
+    message.message_text = "Incident impact changed"
+
+    return message
 
 def change_impact(args,user_integration):
     access_token_object = Servicenow_model.objects.get(user_integration=user_integration.id)
@@ -444,12 +450,6 @@ def get_incidents(args,user_integration):
         if desc == None:
             desc="Short description not available"
         data['list'].append({"Instance_name": incident+" - "+desc,"sys_id": sys})
-
-
-
-
-
-
 
     m.data = data
     return m
