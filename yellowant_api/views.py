@@ -8,8 +8,7 @@ import urllib3
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotAllowed
 from django.contrib.auth.models import User
 from django.conf import settings
-from azure.common.credentials import ServicePrincipalCredentials
-from rauth import OAuth2Service
+
 from yellowant import YellowAnt
 
 from yellowant_command_center.command_center import CommandCenter
