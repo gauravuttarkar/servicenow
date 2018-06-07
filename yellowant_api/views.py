@@ -4,7 +4,6 @@ Business logic for different functions used.
 import json
 import uuid
 import requests
-import urllib3
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseNotAllowed
 from django.contrib.auth.models import User
 from django.conf import settings

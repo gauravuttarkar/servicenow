@@ -1,107 +1,301 @@
-api_url: http://localhost:8000/yellowant-api/
-creator_email: manik@yellowant.com
-documentation_url: http://localhost:8000/
+api_url: http://fd77620e.ngrok.io/yellowant-api/
+creator_email: gaurav.uttarkar@gmail.com
+documentation_url: https://www.yellowant.com/api/
 functions:
-  createitem:
+  changeimpact:
     function_type: 1
     input_args:
-      description:
+      impact:
         arg_type: 14
-        description: The i of the issue
-        example: Leaving for an extended weekend plan to Goa
-        name: description
-        required: 0
-      title:
-        arg_type: 14
-        description: Title of the item
-        example: Email boss for sick leave
-        name: title
+        description: Impact of the incident
+        example: '1'
+        name: impact
         required: 1
-    invoke_name: createitem
+      sys_id:
+        arg_type: 14
+        description: ID of incident
+        example: ID
+        name: sys_id
+        required: 1
+    invoke_name: changeimpact
     is_active: 1
     max_retries: 0
-    name: Create Item
+    name: Change impact
     output_keys: {}
     privacy_mode: 0
     rate_limited: 0
-    short_description: Add a todo item to the list
+    short_description: Changes the impact
     user_rate_limit: 0.0
-  deleteitem:
+  changepriority:
     function_type: 1
     input_args:
-      id:
-        arg_type: 1
-        description: ID of the item
-        example: '7'
-        name: id
+      priority:
+        arg_type: 14
+        description: Priority of the incident
+        example: '3'
+        name: priority
         required: 1
-    invoke_name: deleteitem
+      sys_id:
+        arg_type: 14
+        description: ID of the incident
+        example: ID
+        name: sys_id
+        required: 1
+    invoke_name: changepriority
     is_active: 1
     max_retries: 0
-    name: Delete Item
+    name: Change priority
     output_keys: {}
     privacy_mode: 0
     rate_limited: 0
-    short_description: Delete a todo item from the list
+    short_description: Changes priority of the incident
     user_rate_limit: 0.0
-  getlist:
+  closecode:
     function_type: 1
     input_args: {}
-    invoke_name: getlist
-    is_active: 1
+    invoke_name: closecode
+    is_active: 0
     max_retries: 0
-    name: Get List
-    output_keys: {}
+    name: Close Code
+    output_keys:
+      _keys:
+        list: '[list]:    List of List'
+      list:
+        Name: '__unicode:    List  region  names'
     privacy_mode: 0
     rate_limited: 0
-    short_description: Get the list of todo items
+    short_description: Close codes
     user_rate_limit: 0.0
-  updateitem:
+  closeincident:
     function_type: 1
     input_args:
-      description:
+      close_code:
         arg_type: 14
-        description: The description of the issue
-        example: Leaving for an extended weekend plan to Goa
-        name: description
-        required: 0
-      id:
-        arg_type: 1
-        description: ID of the item
-        example: '7'
-        name: id
+        description: Close codes
+        example: close codes
+        name: close_code
         required: 1
-      title:
+      close_notes:
         arg_type: 14
-        description: Title of the item
-        example: Email boss for sick leave
-        name: title
-        required: 0
-    invoke_name: updateitem
-    is_active: 1
+        description: Close notes
+        example: Close Notes
+        name: close_notes
+        required: 1
+      sys_id:
+        arg_type: 14
+        description: ID of the Incident
+        example: asd343vmasdfl3
+        name: sys_id
+        required: 1
+    invoke_name: closeincident
+    is_active: 0
     max_retries: 0
-    name: Update Item
+    name: Close Incident
     output_keys: {}
     privacy_mode: 0
     rate_limited: 0
-    short_description: Update a todo item in the list
+    short_description: It closes the incident
     user_rate_limit: 0.0
-icon_url: https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png
-id: 79
-install_page_url: http://localhost:8000/
-invoke_name: todo2
+  createincident:
+    function_type: 1
+    input_args:
+      caller:
+        arg_type: 14
+        description: Caller of the Incident
+        example: Jon Snow
+        name: caller
+        required: 1
+      incident_number:
+        arg_type: 14
+        description: Incident number
+        example: IN001
+        name: incident_number
+        required: 1
+      short_description:
+        arg_type: 14
+        description: Short Description of the Incident
+        example: Description
+        name: short_description
+        required: 1
+    invoke_name: createincident
+    is_active: 1
+    max_retries: 0
+    name: Create Incident
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Creates a new incident in ServiceNow instance.
+    user_rate_limit: 0.0
+  deleteincident:
+    function_type: 1
+    input_args:
+      sys_id:
+        arg_type: 14
+        description: ID of the incident
+        example: id
+        name: sys_id
+        required: 1
+    invoke_name: deleteincident
+    is_active: 1
+    max_retries: 0
+    name: Delete Incident
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: It deletes an incident
+    user_rate_limit: 0.0
+  getincident:
+    function_type: 1
+    input_args:
+      sys_id:
+        arg_type: 14
+        description: ID of the incident
+        example: id
+        name: sys_id
+        required: 1
+    invoke_name: getincident
+    is_active: 1
+    max_retries: 0
+    name: Get Incident
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: It gets the details of a particular incident
+    user_rate_limit: 0.0
+  getincidents:
+    function_type: 1
+    input_args: {}
+    invoke_name: getincidents
+    is_active: 0
+    max_retries: 0
+    name: Get incidents
+    output_keys:
+      _keys:
+        list: '[list]:     List of List'
+      list:
+        Instance_name: '__unicode:     List  region  names'
+        sys_id: '__unicode:  list of sys id'
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: It lists all the incidents
+    user_rate_limit: 0.0
+  modifystate:
+    function_type: 1
+    input_args:
+      state:
+        arg_type: 1
+        description: New state of the incident
+        example: '2'
+        name: state
+        required: 1
+      sys_id:
+        arg_type: 14
+        description: ID of the incident
+        example: INC01
+        name: sys_id
+        required: 1
+    invoke_name: modifystate
+    is_active: 1
+    max_retries: 0
+    name: Modify State
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: It modifies the state
+    user_rate_limit: 0.0
+  resolveincident:
+    function_type: 1
+    input_args:
+      close_code:
+        arg_type: 14
+        description: Close codes
+        example: close code
+        name: close_code
+        required: 1
+      resolve_notes:
+        arg_type: 14
+        description: Resolve notes
+        example: resolve_notes
+        name: resolve_notes
+        required: 1
+      sys_id:
+        arg_type: 14
+        description: ID of the incident
+        example: id
+        name: sys_id
+        required: 1
+    invoke_name: resolveincident
+    is_active: 0
+    max_retries: 0
+    name: Resolve Incident
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Resolve incident
+    user_rate_limit: 0.0
+  showimpact:
+    function_type: 1
+    input_args: {}
+    invoke_name: showimpact
+    is_active: 0
+    max_retries: 0
+    name: Show impact
+    output_keys:
+      _keys:
+        list: '[list]:    List of List'
+      list:
+        Value: '__unicode:    List names'
+        name: '__unicode:    List names'
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: It shows the impact of the incident
+    user_rate_limit: 0.0
+  showpriorities:
+    function_type: 1
+    input_args: {}
+    invoke_name: showpriorities
+    is_active: 0
+    max_retries: 0
+    name: Show priorites
+    output_keys:
+      _keys:
+        list: '[list]:    List of List'
+      list:
+        Value: '__unicode:    List  Value names'
+        name: '__unicode:    List names'
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Shows different priorites
+    user_rate_limit: 0.0
+  states:
+    function_type: 1
+    input_args: {}
+    invoke_name: states
+    is_active: 0
+    max_retries: 0
+    name: States
+    output_keys:
+      _keys:
+        list: '[list]:    List of List'
+      list:
+        State: '__unicode:    List  States'
+        State-name: '__unicode:    List  State names'
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: It gives different states
+    user_rate_limit: 0.0
+icon_url: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAwFBMVEX////RIytkZGRdXV1ZWVlhYWFcXFykpKTRICnOAABYWFjTKTHQHSaysrLQGCLh4eH29vbt7e377e7R0dHXRkzcbG/22NnQDBnb29vw8PDPDBmJiYnn5+eUlJStra3PABB0dHTGxsaAgIBra2uZmZm+vr7mlJfUNDv56Onxxcf+9/fppqjbXmP22tvgeHzuubvhgoXnmp3sr7HUOD/YUlfhiozww8Xdb3Lzzs/dZGnge37mlZjXQ0naT1XutrhNTU1bRW+TAAAHiklEQVR4nO2Ya3OqyhKGuYsEuejaEREFUaPBXFcuS9dOdv7/vzrdA4OArhP3l1N1qt6nKhWmgWHe6ZnuHhUFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2
+install_page_url: http://fd77620e.ngrok.io/
+invoke_name: servicenow
 is_active: 1
-is_production_or_sandbox: 1
-long_description: A simple application to add, read, update and delete items from
-  a todo list
-name: Todo Sample App
-privacy_policy_url: http://localhost:8000/
+is_production_or_sandbox: 0
+long_description: Application to handle ServiceNow incidents.
+name: Service Now
+privacy_policy_url: https://www.yellowant.com/common/privacy/
 rate_limit: 0.0
 rate_limited: 0
-redirect_uris: http://localhost:8000/yellowant-oauth-redirect/
-short_description: GitHub is a web-based Git or version control repository and Internet
-  hosting service. It offers all of the distributed version control and source code
-  management functionality of Git as well as adding its own features.
+redirect_uris: http://fd77620e.ngrok.io/yellowant-oauth-redirect/
+short_description: Application to handle ServiceNow incidents.
 user_rate_limit: 0.0
-visibility_scope: 2
-website: http://localhost:8000/
+visibility_scope: 0
+website: http://fd77620e.ngrok.io/
