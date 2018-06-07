@@ -1,7 +1,7 @@
 """Mapping for command invoke name to logic"""
 from .commands import create_incident,get_incident,modify_incident,get_incidents,modify_state,states,close_incident,\
-                      resolve_incident,close_code,delete_incident,show_priorities,change_priority,show_impact,change_impact\
-
+                      resolve_incident,close_code,delete_incident,show_priorities,change_priority,show_impact,change_impact,\
+                      change_urgency
 
 
 commands_by_invoke_name = {
@@ -19,5 +19,6 @@ commands_by_invoke_name = {
 "changepriority": change_priority,
 "showimpact": show_impact,
 "changeimpact": change_impact,
+"changeurgency": change_urgency,
 
 }
