@@ -32,12 +32,12 @@ def service_now_auth(request):
 
     print(error)
 
-    url = "https://dev36687.service-now.com/oauth_token.do"
+    url = "https://"+servicenow_redirect_state.instance+".service-now.com/oauth_token.do"
     data = {
-        "client_secret": "VMUnhyJ(B]",
+        "client_secret": servicenow_redirect_state.client_secret,
         "code": code,
         "redirect_uri": settings.BASE_URL + "/service-now-auth/",
-        "client_id": '86d1c83b765a130013e8b0e93ff96e8e',
+        "client_id": servicenow_redirect_state.client_id,
         "grant_type": "authorization_code",
     }
 
@@ -104,6 +104,10 @@ def request_yellowant_oauth_code(request):
     # #print(response.text)
     # print(url)
     # return HttpResponseRedirect(url)
+    print("redirecting")
+    print("{}?state={}&client_id={}&response_type=code&redirect_url={}".format
+                               (settings.YA_OAUTH_URL, state, settings.YA_CLIENT_ID,
+                                settings.YA_REDIRECT_URL))
     return HttpResponseRedirect("{}?state={}&client_id={}&response_type=code&redirect_url={}".format
                                (settings.YA_OAUTH_URL, state, settings.YA_CLIENT_ID,
                                 settings.YA_REDIRECT_URL))
@@ -112,6 +116,8 @@ def request_yellowant_oauth_code(request):
 
 def yellowant_oauth_redirect(request):
     """Receive the oauth2 code from YA to generate a new user integration"""
+
+    print('Inside yellowant_oauth_redirect')
     code = request.GET.get("code")
 
     # the unique string to identify the user for which we will create an integration
@@ -151,8 +157,7 @@ def yellowant_oauth_redirect(request):
                                             ["user_invoke_name"],
                                             yellowant_integration_token=access_token)
 
-    state = str(uuid.uuid4())
-    AppRedirectState.objects.create(user_integration=user_t.id, state=state)
+
     # facebook = OAuth2Service(
     #     client_id='86d1c83b765a130013e8b0e93ff96e8e',
     #     client_secret='VMUnhyJ(B]',
@@ -175,8 +180,8 @@ def yellowant_oauth_redirect(request):
     # }
     # url = facebook.get_authorize_url(**params)
 
-    url = ('{}?state={}&response_type=code&client_id={}&redirect_uri={}&client_secret={}'.\
-    format("https://dev36687.service-now.com/oauth_auth.do", state, "86d1c83b765a130013e8b0e93ff96e8e",settings.BASE_URL+"/service-now-auth/",'VMUnhyJ(B]'))
+    # url = ('{}?state={}&response_type=code&client_id={}&redirect_uri={}&client_secret={}'.\
+    # format("https://dev36687.service-now.com/oauth_auth.do", state, "86d1c83b765a130013e8b0e93ff96e8e",settings.BASE_URL+"/service-now-auth/",'VMUnhyJ(B]'))
 
     # A new YA user integration has been created and the details have been successfully saved in
     # your
@@ -192,8 +197,11 @@ def yellowant_oauth_redirect(request):
     # corresponding to each YA user integration.
 
     # return HttpResponseRedirect("to the actual application authentication URL")
-    print(url)
-    return HttpResponseRedirect(url)
+    #print(url)
+    return HttpResponseRedirect("/")
+
+# def service_now_integration(request):
+
 
 
 def yellowant_api(request):
@@ -231,35 +239,43 @@ def api_key(request):
     data = json.loads(request.body)
     #global ACCESS_TOKEN
 
-    url="https://"+data["instance"]+".service-now.com/oauth_token.do"
-    headers = {
-        "Content-Type" : "application/x-www-form-urlencoded"
-    }
-    body={
-        "grant_type" : "password",
-        "client_id" : data["client_id"],
-        "client_secret" : data["client_secret"],
-        "username" : data["username"],
-        "password" : data["password"],
-    }
-    response = requests.post(url=url, headers=headers, data=body)
-    print(response)
+    state = str(uuid.uuid4())
+    AppRedirectState.objects.create(user_integration=data["user_integration_id"], state=state, instance=data["instance"]\
+                                    ,client_id=data["client_id"],client_secret=data["client_secret"])
 
-    response = response.json()
-    aby = Servicenow_model.objects.get(user_integration_id=int(data["user_integration_id"]))
-    aby.access_token = response["access_token"]
-    aby.update_login_flag = True
-    aby.save()
-
-    print(data["user_integration_id"])
-    print(type(response))
-
-    print(type(response))
-    print(response)
-    ACCESS_TOKEN=response["access_token"]
-    print(ACCESS_TOKEN)
-
-    return HttpResponse("Success", status=200)
+    url = ('{}?state={}&response_type=code&client_id={}&redirect_uri={}&client_secret={}'.\
+    format("https://"+data["instance"]+".service-now.com/oauth_auth.do", state, data['client_id'], settings.BASE_URL+"/service-now-auth/", data['client_secret']))
+    print(url)
+    return HttpResponseRedirect(url)
+    # #url="https://"+data["instance"]+".service-now.com/oauth_token.do"
+    # headers = {
+    #     "Content-Type" : "application/x-www-form-urlencoded"
+    # }
+    # body={
+    #     "grant_type" : "password",
+    #     "client_id" : data["client_id"],
+    #     "client_secret" : data["client_secret"],
+    #     "username" : data["username"],
+    #     "password" : data["password"],
+    # }
+    # response = requests.post(url=url, headers=headers, data=body)
+    # print(response)
+    #
+    # response = response.json()
+    # aby = Servicenow_model.objects.get(user_integration_id=int(data["user_integration_id"]))
+    # aby.access_token = response["access_token"]
+    # aby.update_login_flag = True
+    # aby.save()
+    #
+    # print(data["user_integration_id"])
+    # print(type(response))
+    #
+    # print(type(response))
+    # print(response)
+    # ACCESS_TOKEN=response["access_token"]
+    # print(ACCESS_TOKEN)
+    #
+    # return HttpResponse("Success", status=200)
 
 # def api_key(request):
 #     """An object is created in the database using the request."""

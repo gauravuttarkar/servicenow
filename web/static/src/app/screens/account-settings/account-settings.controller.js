@@ -26,6 +26,7 @@ export function AccountSettingsController(AppApi, UserAccounts, $location, $mdDi
 									})
 									.then(function(response){
 									if(response.status==200){
+
 									    $ctrl.showSimpleToast(response.data);
 									    $ctrl.isDisabled = false;}
 	                                else{

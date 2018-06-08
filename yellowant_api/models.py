@@ -70,7 +70,10 @@ class AppRedirectState(models.Model):
         Child table
     """
     user_integration = models.IntegerField()
-    state = models.CharField(max_length=512, null=False)
+    state = models.CharField(max_length=512, null=False,default=0)
+    client_id = models.CharField(max_length=512, null=False,default=0)
+    client_secret = models.CharField(max_length=512, null=False,default=0)
+    instance = models.CharField(max_length=512, null=False,default=0)
 
 class Servicenow_model(models.Model):
     user_integration = models.IntegerField(default=0)

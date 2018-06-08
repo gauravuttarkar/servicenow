@@ -27,7 +27,7 @@
               <h3 class="f3 mb2" md-colors="::{ color: 'accent'}">ServiceNow Account Not Integrated</h3>
               <div><b>YellowAnt Invoke Name:</b> {{ ::account.user_invoke_name }}</div>
             </div>
-            <a md-button class="md-accent md-raised hidden-action-buttons" target="_blank" ng-href="create-new-integration/">Integrate</a>
+            <a md-button class="md-accent md-raised hidden-action-buttons" target="_blank" ui-sref="accountSettings({ accountId: account.id })">Integrate</a>
           </md-content>
         </md-card>
       </md-list-item>
