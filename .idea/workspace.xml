@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60da1b80-7786-4b7c-93ef-a6db655cf327" name="Default" comment="" />
+    <list default="true" id="60da1b80-7786-4b7c-93ef-a6db655cf327" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yellowant_service_now/settings.py" afterPath="$PROJECT_DIR$/yellowant_service_now/settings.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,68 +17,118 @@
       <file leaf-file-name="account-settings.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-settings/account-settings.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+            <state relative-caret-position="-1891">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="account-settings.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-settings/account-settings.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
               <caret line="51" column="48" lean-forward="false" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+=======
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
               <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+=======
+      <file leaf-file-name="commands.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yellowant_command_center/commands.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5495">
+              <caret line="375" column="27" lean-forward="false" selection-start-line="375" selection-start-column="19" selection-end-line="375" selection-end-column="27" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/static/src/app/app.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+      <file leaf-file-name="account-list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="51" column="6" lean-forward="true" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/static/src/app/app.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
               <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+=======
+      <file leaf-file-name="commands_by_invoke_name.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yellowant_command_center/commands_by_invoke_name.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/static/src/app/app.html">
+=======
+      <file leaf-file-name="command_center.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yellowant_command_center/command_center.py">
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/static/src/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
               <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+=======
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yellowant_service_now/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
@@ -104,8 +157,13 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="210">
               <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+=======
+            <state relative-caret-position="2970">
+              <caret line="198" column="18" lean-forward="false" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
               <folding />
             </state>
           </provider>
@@ -123,6 +181,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>api_key</find>
+      <find>ngrok</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,11 +196,15 @@
         <option value="$PROJECT_DIR$/yellowant_service_now/urls.py" />
         <option value="$PROJECT_DIR$/yellowant_service_now/wsgi.py" />
         <option value="$PROJECT_DIR$/manage.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/.gitignore" />
+=======
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         <option value="$PROJECT_DIR$/yellowant_command_center/commands.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/yellowant_app.yaml" />
         <option value="$PROJECT_DIR$/yellowant_command_center/commands_by_invoke_name.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/yellowant_api/urls.py" />
         <option value="$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.html" />
@@ -149,11 +212,14 @@
         <option value="$PROJECT_DIR$/yellowant_api/models.py" />
         <option value="$PROJECT_DIR$/yellowant_api/views.py" />
         <option value="$PROJECT_DIR$/web/static/src/app/screens/account-settings/account-settings.controller.js" />
+=======
+        <option value="$PROJECT_DIR$/.gitignore" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         <option value="$PROJECT_DIR$/yellowant_service_now/settings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
@@ -247,6 +313,49 @@
             <path>
               <item name="servicenow" type="b2602c69:ProjectViewProjectNode" />
               <item name="servicenow" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="servicenow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servicenow" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="servicenow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servicenow" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="servicenow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servicenow" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="servicenow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servicenow" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
+              <item name="account-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="servicenow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="servicenow" type="462c0819:PsiDirectoryNode" />
               <item name="yellowant_api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -323,7 +432,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2828125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -332,7 +442,11 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33287483" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.257329" sideWeight="0.49375" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -534,6 +648,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/yellowant_api/migrations/0011_auto_20180606_0551.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -542,6 +657,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_api/migrations/__init__.py">
+=======
+    <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.controller.js">
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -550,20 +668,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_app.yaml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2970">
           <caret line="198" column="18" lean-forward="false" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
+=======
+        <state relative-caret-position="675">
+          <caret line="45" column="38" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_command_center/commands_by_invoke_name.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="315">
           <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+=======
+        <state relative-caret-position="30">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/apps.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -573,41 +702,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+=======
+        <state relative-caret-position="615">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_command_center/command_center.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+=======
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="195">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
+<<<<<<< HEAD
           <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+=======
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="360">
           <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_command_center/commands.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="5505">
           <caret line="375" column="27" lean-forward="false" selection-start-line="375" selection-start-column="19" selection-end-line="375" selection-end-column="27" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
@@ -621,12 +778,17 @@
     <entry file="file://$PROJECT_DIR$/web/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
+<<<<<<< HEAD
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+=======
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_api/models.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="258">
           <caret line="75" column="68" lean-forward="false" selection-start-line="75" selection-start-column="68" selection-end-line="75" selection-end-column="68" />
         </state>
@@ -636,27 +798,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+=======
+        <state relative-caret-position="765">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_api/views.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="185">
           <caret line="247" column="14" lean-forward="true" selection-start-line="247" selection-start-column="14" selection-end-line="247" selection-end-column="14" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-settings/account-settings.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="318">
           <caret line="30" column="65" lean-forward="true" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yellowant_api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="225">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
@@ -671,15 +852,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-settings/account-settings.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="765">
           <caret line="51" column="48" lean-forward="false" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
           <folding />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
         </state>
       </provider>
     </entry>
@@ -709,40 +894,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="2970">
+          <caret line="198" column="18" lean-forward="false" selection-start-line="198" selection-start-column="18" selection-end-line="198" selection-end-column="18" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="400">
           <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+=======
+        <state relative-caret-position="315">
+          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="165">
           <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+=======
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yellowant_service_now/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.screen.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="135">
           <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+=======
+        <state relative-caret-position="5495">
+          <caret line="375" column="27" lean-forward="false" selection-start-line="375" selection-start-column="19" selection-end-line="375" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/src/app/screens/account-list/account-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="51" column="6" lean-forward="true" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/static/src/app/app.controller.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="350">
           <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+=======
+        <state relative-caret-position="-1891">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+>>>>>>> 625c23a150cf877cc6bbd6e6fec4d0a8c010684f
           <folding />
         </state>
       </provider>
