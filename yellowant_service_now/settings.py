@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_URL = "http://fd77620e.ngrok.io"
+BASE_URL = "http://fd77620e.ngrok."
 ### YellowAnt specific settings ###
 # URL to obtain oauth2 access for a YA user
 YA_OAUTH_URL = "https://www.yellowant.com/api/oauth2/authorize/"
