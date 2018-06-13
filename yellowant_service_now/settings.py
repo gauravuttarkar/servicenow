@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-BASE_URL = "https://2ceb2cd4.ngrok.io"
+BASE_URL = "https://1dfc8ef2.ngrok.io"
 
 
 ### YellowAnt specific settings ###
@@ -51,7 +51,7 @@ SECRET_KEY = '#x9q+c*t9$=buk$i@m&6e+k@m(q@uds0gd=9=3cej6u#_u=m*%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+BASE_HREF = "/"
 # SECURITY WARNING: remove wildcard condition from ALLOWED_HOSTS
 ALLOWED_HOSTS = ["*"]
 

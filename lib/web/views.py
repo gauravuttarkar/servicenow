@@ -3,7 +3,7 @@ Different functions required for angular
 """
 #import uuid
 
-#from django.conf import settings
+from django.conf import settings
 import json
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -23,12 +23,19 @@ def index(request, path):
     context = {
         "user_integrations": []
     }
+    context = {"base_href": settings.BASE_HREF,
+               "application_id": settings.YA_APP_ID,
+               "user_integrations": []
+               }
 
     if request.user.is_authenticated:
         user_integrations = UserIntegration.objects.filter(user=request.user.id)
         #print(user_integration)
         for user_integration in user_integrations:
             context["user_integrations"].append(user_integration)
+    context = {"base_href": settings.BASE_HREF,
+                "application_id": settings.YA_APP_ID,
+              }
     #print("test2")
     return render(request, "home.html", context)
 

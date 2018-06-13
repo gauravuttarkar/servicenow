@@ -58,7 +58,7 @@ def service_now_auth(request):
                                           update_login_flag=True,
                                           instance=instance_name,
                                           )
-    return HttpResponseRedirect("/")
+    return HttpResponseRedirect(reverse(""))
 
 
 

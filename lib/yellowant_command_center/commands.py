@@ -54,7 +54,7 @@ def delete_incident(args,user_integration):
         'Authorization' : 'Bearer '+ access_token
     }
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.delete(url=url,headers=headers)
 
     message = MessageClass()
@@ -76,7 +76,7 @@ def get_incident(args,user_integration):
 
     sys_id = args.get('sys_id')
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
 
     response=requests.get(url=url,headers=headers)
 
@@ -222,7 +222,7 @@ def change_urgency(args,user_integration):
             "priority" : impact
             }
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
 
     message = MessageClass()
@@ -245,7 +245,7 @@ def change_impact(args,user_integration):
             "priority" : impact
             }
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
 
     message = MessageClass()
@@ -285,7 +285,7 @@ def change_priority(args,user_integration):
             "priority" : priority
             }
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
 
     message = MessageClass()
@@ -315,7 +315,7 @@ def resolve_incident(args,user_integration):
             }
 
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
 
     message = MessageClass()
@@ -360,7 +360,7 @@ def close_incident(args,user_integration):
             }
 
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
 
     message = MessageClass()
@@ -384,18 +384,19 @@ def modify_state(args, user_integration):
     }
 
     sys_id = args.get('sys_id')
+    print(sys_id)
     new_state = int(args.get('state'))
-
+    print(new_state)
     body = {
         "incident_state": new_state,
         "state" : new_state,
-        "short_description": "changing again and again",
     }
 
     instance = access_token_object.instance
-    url=" https://" + instance + ".service-now.com/api/now/table/incident" + sys_id
+    print(instance)
+    url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
-
+    print(response)
     message = MessageClass()
     message.message_text = "Incident state changed"
 

@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
-<base href="/">
+<!--<base href="/">-->
+{% block base %}<base href="{{base_href}}">{% endblock %}
 {% block content %}
 
-
+<!--base_href :"{{base_href}}",-->
+ <!--base_href :"/",-->
+<!--#csrftoken: '{{ csrf_token }}',-->
 <script>
   var djangoConstants ={
+
+    base_href: "{{base_href}}",
     csrftoken: '{{ csrf_token }}',
-    base_href :"/",
-    application_id:348
+    application_id: {{application_id}}
   };
 </script>
  {% comment %} {% if user.is_authenticated %}
