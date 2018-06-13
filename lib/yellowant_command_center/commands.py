@@ -12,14 +12,12 @@ import json
 
 
 def create_incident(args,user_integration):
-    print("Inside create incident")
 
-    print(user_integration.id)
     access_token_object = Servicenow_model.objects.get(user_integration=user_integration.id)
     access_token = access_token_object.access_token
     instance = access_token_object.instance
     url=" https://" + instance + ".service-now.com/api/now/table/incident"
-    #print(ACCESS_TOKEN)
+
     headers= {
         'Accept' : 'application/json',
         'Content-Type' : 'application/json',
@@ -33,7 +31,7 @@ def create_incident(args,user_integration):
 
     response = requests.post(url=url, headers=headers,data=json.dumps(body))
     message=MessageClass()
-    print(response)
+
     message.message_text = "Created Incident"
     return message
 
@@ -80,7 +78,7 @@ def get_incident(args,user_integration):
 
     response=requests.get(url=url,headers=headers)
 
-    print(response.text)
+
     message = MessageClass()
     message.message_text = "The incident is"
 
@@ -161,8 +159,8 @@ def get_incident(args,user_integration):
 
     message.attach(attachment)
 
-    print(user_integration.id)
-    print(user_integration.yellowant_integration_id)
+    # print(user_integration.id)
+    # print(user_integration.yellowant_integration_id)
     return message
 
 
@@ -182,8 +180,8 @@ def states(args,user_integration):
 
 def get_webhook(args,user_integration):
     object = UserIntegration.objects.get(id=user_integration.id)
-    print(object.yellowant_integration_invoke_name)
-    print(object.webhook_id)
+    # print(object.yellowant_integration_invoke_name)
+    # print(object.webhook_id)
     message = MessageClass()
     message.message_text="Webhook ID"
     attachment = MessageAttachmentsClass()
@@ -384,56 +382,19 @@ def modify_state(args, user_integration):
     }
 
     sys_id = args.get('sys_id')
-    print(sys_id)
     new_state = int(args.get('state'))
-    print(new_state)
     body = {
         "incident_state": new_state,
         "state" : new_state,
     }
 
     instance = access_token_object.instance
-    print(instance)
     url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
-    print(response)
     message = MessageClass()
     message.message_text = "Incident state changed"
 
     return message
-
-def modify_incident():
-    if (ACCESS_TOKEN==None):
-        oauth()
-    incidents = get_incidents()
-
-    print(incidents)
-    print(type(incidents))
-    headers = {
-        'Accept' : 'application/json',
-        'Content-Type' : 'application/json',
-        'Authorization' : 'Bearer '+ ACCESS_TOKEN
-    }
-
-    for i in incidents["result"]:
-        print(i["sys_id"]+" "+i["number"])
-
-
-    print('Choose a sys_id')
-    sys_id = input()
-    url = "https://dev36687.service-now.com/api/now/table/incident/" + sys_id
-    body = {
-        "impact" : 2,
-        "priority" : 2,
-        "number" : "INCIDENT01"
-    }
-    body["impact"]=int(input('Enter new impact'))
-    body["priority"] = int(input('Enter new priority'))
-    body["number"] = input('Enter new name')
-
-    response=requests.put(url=url,headers=headers,data=json.dumps(body))
-
-    print(response.text)
 
 
 
@@ -442,7 +403,7 @@ def get_incidents(args,user_integration):
     access_token_object = Servicenow_model.objects.get(user_integration=user_integration.id)
     access_token = access_token_object.access_token
     instance = access_token_object.instance
-    print(instance)
+
     url=" https://" + instance + ".service-now.com/api/now/table/incident"
     headers= {
         'Accept' : 'application/json',
@@ -471,7 +432,7 @@ def get_incidents(args,user_integration):
             if k=="number":
                 #data['list'].append({"Instance_name": v,"sys_id"}:)
                 incident = v
-                print (v)
+                #print (v)
             if k=="sys_id":
                 sys = v
             if k=="short_description":
