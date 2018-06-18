@@ -18,7 +18,7 @@ from ..yellowant_api.models import UserIntegration,Servicenow_model
 # Create your views here.
 
 
-def index(request, path):
+def index(request, path=""):
     """Index of the user Integration."""
     context = {
         "user_integrations": []

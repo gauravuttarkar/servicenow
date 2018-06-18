@@ -65,6 +65,7 @@ class YellowAntRedirectState(models.Model):
     #user = models.ForeignKey(User, on_delete=models.CASCADE)
     user = models.IntegerField()
     state = models.CharField(max_length=512, null=False)
+    subdomain = models.CharField(max_length=128)
 
 class AppRedirectState(models.Model):
     """
@@ -75,6 +76,7 @@ class AppRedirectState(models.Model):
     client_id = models.CharField(max_length=512, null=False,default=0)
     client_secret = models.CharField(max_length=512, null=False,default=0)
     instance = models.CharField(max_length=512, null=False,default=0)
+    subdomain = models.CharField(max_length=128)
 
 class Servicenow_model(models.Model):
     user_integration = models.IntegerField(default=0)

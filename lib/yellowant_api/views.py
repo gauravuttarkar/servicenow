@@ -12,7 +12,7 @@ from yellowant import YellowAnt
 from yellowant.messageformat import MessageClass, MessageAttachmentsClass, AttachmentFieldsClass ,MessageButtonsClass
 
 from ..yellowant_command_center.command_center import CommandCenter
-
+from django.urls import reverse
 from .models import YellowAntRedirectState, UserIntegration ,Servicenow_model,AppRedirectState
 
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -21,6 +21,7 @@ global ACCESS_TOKEN
 
 def service_now_auth(request):
     global ACCESS_TOKEN
+    print (request.user.id)
     code = request.GET.get("code")
     state = request.GET.get("state")
     print("Auth Code is ",code)
@@ -37,7 +38,7 @@ def service_now_auth(request):
     data = {
         "client_secret": servicenow_redirect_state.client_secret,
         "code": code,
-        "redirect_uri": settings.BASE_URL + "/service-now-auth/",
+        "redirect_uri": settings.BASE_URL + "service-now-auth/",
         "client_id": servicenow_redirect_state.client_id,
         "grant_type": "authorization_code",
     }
@@ -59,11 +60,15 @@ def service_now_auth(request):
                                           instance=instance_name,
                                           expires_in=expires_in
                                           )
-    return HttpResponseRedirect("/")
+
+    url = settings.SITE_PROTOCOL + f'{servicenow_redirect_state.subdomain}.' + settings.SITE_DOMAIN_URL + \
+          settings.BASE_HREF
+    return HttpResponseRedirect(url)
 
 
 
 def request_yellowant_oauth_code(request):
+    subdomain = request.get_host().split('.')[0]
     """Initiate the creation of a new user integration on YA
     YA uses oauth2 as its authorization framework. This method requests for an oauth2 code from
     YA to start creating a
@@ -77,7 +82,7 @@ def request_yellowant_oauth_code(request):
 
     # save the relation between user and state so that we can identify the user when YA returns
     # the oauth2 code
-    YellowAntRedirectState.objects.create(user=user.id, state=state)
+    YellowAntRedirectState.objects.create(user=user.id, state=state, subdomain=subdomain)
 
     return HttpResponseRedirect("{}?state={}&client_id={}&response_type=code&redirect_url={}".format
                                (settings.YA_OAUTH_URL, state, settings.YA_CLIENT_ID,
@@ -103,9 +108,10 @@ def yellowant_oauth_redirect(request):
                           access_token=None,
                           redirect_uri=settings.YA_REDIRECT_URL)
 
-
+    print (settings.YA_REDIRECT_URL)
     # get the access token for a user integration from YA against the code
     access_token_dict = ya_client.get_access_token(code)
+    print (access_token_dict)
 
     access_token = access_token_dict["access_token"]
 
@@ -130,25 +136,9 @@ def yellowant_oauth_redirect(request):
                                             yellowant_integration_token=access_token,
                                             webhook_id=webhook_id)
 
-
-    """A new YA user integration has been created and the details have been successfully saved in
-    your
-    application's
-    database. However, we have only created an integration on YA. As a developer, you need to
-    begin
-     an authentication process for the actual application, whose API this application is
-     connecting to. Once, the authentication process
-    for the actual application is completed with the user, you need to create a db entry which
-    relates the YA user integration, we just created, with the actual application
-    authentication details of the user.
-     This application will then be able to identify the actual application accounts
-    corresponding to each YA user integration."""
-
-
-    return HttpResponseRedirect("/")
-
-
-
+    url = settings.SITE_PROTOCOL + f'{yellowant_redirect_state.subdomain}.' + settings.SITE_DOMAIN_URL+ \
+          settings.BASE_HREF
+    return HttpResponseRedirect(url)
 
 
 @csrf_exempt
@@ -186,13 +176,17 @@ def yellowant_api(request):
 def api_key(request):
     data = json.loads(request.body)
     #global ACCESS_TOKEN
-
+    subdomain = request.get_host().split(".")[0]
     state = str(uuid.uuid4())
-    AppRedirectState.objects.create(user_integration=data["user_integration_id"], state=state, instance=data["instance"]\
-                                    ,client_id=data["client_id"],client_secret=data["client_secret"])
+    AppRedirectState.objects.create(user_integration=data["user_integration_id"],
+                                    state=state,
+                                    instance=data["instance"],
+                                    client_id=data["client_id"],
+                                    client_secret=data["client_secret"],
+                                    subdomain=subdomain)
 
     url = ('{}?state={}&response_type=code&client_id={}&redirect_uri={}&client_secret={}'.\
-    format("https://"+data["instance"]+".service-now.com/oauth_auth.do", state, data['client_id'], settings.BASE_URL+"/service-now-auth/", data['client_secret']))
+    format("https://"+data["instance"]+".service-now.com/oauth_auth.do", state, data['client_id'], settings.BASE_URL+"service-now-auth/", data['client_secret']))
     print(url)
     return HttpResponse(url, status=200)
 

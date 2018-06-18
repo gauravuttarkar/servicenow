@@ -59,9 +59,9 @@ functions:
     name: Close Code
     output_keys:
       _keys:
-        list: '[list]:    List of List'
+        list: '[list]: List of List'
       list:
-        Name: '__unicode:    List  region  names'
+        Name: '__unicode: List  region  names'
     privacy_mode: 0
     rate_limited: 0
     short_description: Close codes
@@ -171,10 +171,10 @@ functions:
     name: Get incidents
     output_keys:
       _keys:
-        list: '[list]:     List of List'
+        list: '[list]: List of List'
       list:
-        Instance_name: '__unicode:     List  region  names'
-        sys_id: '__unicode:  list of sys id'
+        Instance_name: '__unicode: List  region  names'
+        sys_id: '__unicode: list of sys id'
     privacy_mode: 0
     rate_limited: 0
     short_description: It lists all the incidents
@@ -242,10 +242,10 @@ functions:
     name: Show impact
     output_keys:
       _keys:
-        list: '[list]:    List of List'
+        list: '[list]: List of List'
       list:
-        Value: '__unicode:    List names'
-        name: '__unicode:    List names'
+        Value: '__unicode: List names'
+        name: '__unicode: List names'
     privacy_mode: 0
     rate_limited: 0
     short_description: It shows the impact of the incident
@@ -259,10 +259,10 @@ functions:
     name: Show priorites
     output_keys:
       _keys:
-        list: '[list]:    List of List'
+        list: '[list]: List of List'
       list:
-        Value: '__unicode:    List  Value names'
-        name: '__unicode:    List names'
+        Value: '__unicode: List  Value names'
+        name: '__unicode: List names'
     privacy_mode: 0
     rate_limited: 0
     short_description: Shows different priorites
@@ -276,10 +276,10 @@ functions:
     name: States
     output_keys:
       _keys:
-        list: '[list]:    List of List'
+        list: '[list]: List of List'
       list:
-        State: '__unicode:    List  States'
-        State-name: '__unicode:    List  State names'
+        State: '__unicode: List  States'
+        State-name: '__unicode: List  State names'
     privacy_mode: 0
     rate_limited: 0
     short_description: It gives different states
@@ -288,7 +288,7 @@ icon_url: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA
 install_page_url: http://fd77620e.ngrok.io/
 invoke_name: servicenow
 is_active: 1
-is_production_or_sandbox: 0
+is_production_or_sandbox: 1
 long_description: Application to handle ServiceNow incidents.
 name: Service Now
 privacy_policy_url: https://www.yellowant.com/common/privacy/
@@ -297,5 +297,5 @@ rate_limited: 0
 redirect_uris: http://fd77620e.ngrok.io/yellowant-oauth-redirect/
 short_description: Application to handle ServiceNow incidents.
 user_rate_limit: 0.0
-visibility_scope: 0
+visibility_scope: 2
 website: http://fd77620e.ngrok.io/
