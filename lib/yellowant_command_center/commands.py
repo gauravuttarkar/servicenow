@@ -215,9 +215,9 @@ def change_urgency(args,user_integration):
         'Authorization' : 'Bearer '+ access_token
     }
     sys_id = args.get('sys_id')
-    impact = args.get('urgency')
+    urgency = args.get('urgency')
     body = {
-            "priority" : impact
+            "urgency" : urgency
             }
     instance = access_token_object.instance
     url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id
@@ -240,7 +240,7 @@ def change_impact(args,user_integration):
     sys_id = args.get('sys_id')
     impact = args.get('impact')
     body = {
-            "priority" : impact
+            "impact" : impact
             }
     instance = access_token_object.instance
     url=" https://" + instance + ".service-now.com/api/now/table/incident/" + sys_id

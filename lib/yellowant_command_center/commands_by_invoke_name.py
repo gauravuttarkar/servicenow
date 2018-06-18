@@ -7,7 +7,6 @@ from .commands import create_incident,get_incident,get_incidents,modify_state,st
 commands_by_invoke_name = {
 "createincident" : create_incident,
 "getincident" : get_incident,
-# "modifyincident" : modify_incident,
 "getincidents"  : get_incidents,
 "modifystate" : modify_state,
 "states" : states,
