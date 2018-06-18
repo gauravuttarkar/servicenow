@@ -20,7 +20,7 @@
                 </div>
             </a>
             <!--<a ng-if="account.app_authenticated" md-button class="md-primary md-raised hidden-action-buttons" ui-sref="accountSettings({ accountId: account.id })">View</a>-->
-            <!--<a ng-if="account.app_authenticated" md-button class="md-primary md-raised hidden-action-buttons" ng-click="$ctrl.onDeleteAccount(account)" >Delete</a>-->
+            <a ng-if="account.app_authenticated" md-button class="md-primary md-raised hidden-action-buttons" ng-click="$ctrl.onDeleteAccount(account)" >Delete</a>
           </md-content>
           <md-content class="pa3" layout="row" layout-align="space-between center" ng-if="!account.app_authenticated">
             <div class="mb0">
@@ -34,7 +34,7 @@
     </md-list>
     <div ng-if="!$ctrl.userAccounts" class="mw7 w-100">
       <div class="mb3"><i>
-       Azure is the Microsoft Cloud platform.
+       ServiceNow
       </i></div>
       <div layout="row" layout-align="center" class="mb4">
         <img class="app-logo" src="http://allvectorlogo.com/img/2016/04/servicenow-logo.png" />

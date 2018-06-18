@@ -81,5 +81,6 @@ class Servicenow_model(models.Model):
     access_token = models.CharField(max_length=200, default = "default")
     refresh_token = models.CharField(max_length=200, default = "default")
     update_login_flag = models.BooleanField(max_length=2, default=False)
+    expires_in = models.BigIntegerField(default=1000000000)
     instance = models.CharField(max_length=512, null=False,default=0)
 

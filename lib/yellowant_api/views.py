@@ -41,7 +41,6 @@ def service_now_auth(request):
         "client_id": servicenow_redirect_state.client_id,
         "grant_type": "authorization_code",
     }
-
     # Url to which request is to be sent for SM access_token.
     access_token_response = requests.post(url, data=data)
     print("==============================")
@@ -49,6 +48,7 @@ def service_now_auth(request):
     print("==============================")
     ACCESS_TOKEN=access_token_response.json()['access_token']
     REFRESH_TOKEN=access_token_response.json()['refresh_token']
+    expires_in=access_token_response.json()['expires_in']
     print('Inside service now')
     print(ACCESS_TOKEN)
 
@@ -57,8 +57,9 @@ def service_now_auth(request):
                                           refresh_token=REFRESH_TOKEN,
                                           update_login_flag=True,
                                           instance=instance_name,
+                                          expires_in=expires_in
                                           )
-    return HttpResponseRedirect(reverse(""))
+    return HttpResponseRedirect("/")
 
 
 
@@ -201,11 +202,16 @@ def webhooks(request,id=None):
     #print(request.post.data)
     # print(type(request))
     # print((request.body))
-    body=json.loads(json.dumps((request.body.decode("utf-8"))))
+    try:
+        body=json.loads(json.dumps((request.body.decode("utf-8"))))
+
     # print("Body is")
     # print(body)
     # print(json.loads(body))
-    body=json.loads(body)
+        body=json.loads(body)
+    except:
+        return HttpResponse("Failed", status=404)
+
     # print(body['sys_id'])
     User = UserIntegration.objects.get(webhook_id=id)
     service_application = str(User.yellowant_integration_id)
