@@ -1,4 +1,4 @@
-api_url: http://fd77620e.ngrok.io/yellowant-api/
+api_url: https://d0e6f62c.ngrok.io/yellowant-api/
 creator_email: gaurav.uttarkar@gmail.com
 documentation_url: https://www.yellowant.com/api/
 functions:
@@ -50,6 +50,30 @@ functions:
     rate_limited: 0
     short_description: Changes priority of the incident
     user_rate_limit: 0.0
+  changeurgency:
+    function_type: 1
+    input_args:
+      sys_id:
+        arg_type: 14
+        description: ID of the Incident
+        example: ID
+        name: sys_id
+        required: 1
+      urgency:
+        arg_type: 14
+        description: Urgency of the incident
+        example: '2'
+        name: urgency
+        required: 1
+    invoke_name: changeurgency
+    is_active: 1
+    max_retries: 0
+    name: Change urgency
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Changes the urgency of the incident
+    user_rate_limit: 0.0
   closecode:
     function_type: 1
     input_args: {}
@@ -59,9 +83,9 @@ functions:
     name: Close Code
     output_keys:
       _keys:
-        list: '[list]: List of List'
+        list: '[list]:    List of List'
       list:
-        Name: '__unicode: List  region  names'
+        Name: '__unicode:    List  region  names'
     privacy_mode: 0
     rate_limited: 0
     short_description: Close codes
@@ -88,7 +112,7 @@ functions:
         name: sys_id
         required: 1
     invoke_name: closeincident
-    is_active: 0
+    is_active: 1
     max_retries: 0
     name: Close Incident
     output_keys: {}
@@ -171,13 +195,25 @@ functions:
     name: Get incidents
     output_keys:
       _keys:
-        list: '[list]: List of List'
+        list: '[list]:     List of List'
       list:
-        Instance_name: '__unicode: List  region  names'
-        sys_id: '__unicode: list of sys id'
+        Instance_name: '__unicode:     List  region  names'
+        sys_id: '__unicode:  list of sys id'
     privacy_mode: 0
     rate_limited: 0
     short_description: It lists all the incidents
+    user_rate_limit: 0.0
+  getwebhook:
+    function_type: 1
+    input_args: {}
+    invoke_name: getwebhook
+    is_active: 1
+    max_retries: 0
+    name: Get webhook ID
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: Gives the webhook ID
     user_rate_limit: 0.0
   modifystate:
     function_type: 1
@@ -225,7 +261,7 @@ functions:
         name: sys_id
         required: 1
     invoke_name: resolveincident
-    is_active: 0
+    is_active: 1
     max_retries: 0
     name: Resolve Incident
     output_keys: {}
@@ -242,10 +278,10 @@ functions:
     name: Show impact
     output_keys:
       _keys:
-        list: '[list]: List of List'
+        list: '[list]:    List of List'
       list:
-        Value: '__unicode: List names'
-        name: '__unicode: List names'
+        Value: '__unicode:    List names'
+        name: '__unicode:    List names'
     privacy_mode: 0
     rate_limited: 0
     short_description: It shows the impact of the incident
@@ -259,10 +295,10 @@ functions:
     name: Show priorites
     output_keys:
       _keys:
-        list: '[list]: List of List'
+        list: '[list]:    List of List'
       list:
-        Value: '__unicode: List  Value names'
-        name: '__unicode: List names'
+        Value: '__unicode:    List  Value names'
+        name: '__unicode:    List names'
     privacy_mode: 0
     rate_limited: 0
     short_description: Shows different priorites
@@ -276,26 +312,38 @@ functions:
     name: States
     output_keys:
       _keys:
-        list: '[list]: List of List'
+        list: '[list]:    List of List'
       list:
-        State: '__unicode: List  States'
-        State-name: '__unicode: List  State names'
+        State: '__unicode:    List  States'
+        State-name: '__unicode:    List  State names'
     privacy_mode: 0
     rate_limited: 0
     short_description: It gives different states
     user_rate_limit: 0.0
+  webhook:
+    function_type: 2
+    input_args: {}
+    invoke_name: webhook
+    is_active: 0
+    max_retries: 0
+    name: webhook
+    output_keys: {}
+    privacy_mode: 0
+    rate_limited: 0
+    short_description: webhook trial
+    user_rate_limit: 0.0
 icon_url: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAwFBMVEX////RIytkZGRdXV1ZWVlhYWFcXFykpKTRICnOAABYWFjTKTHQHSaysrLQGCLh4eH29vbt7e377e7R0dHXRkzcbG/22NnQDBnb29vw8PDPDBmJiYnn5+eUlJStra3PABB0dHTGxsaAgIBra2uZmZm+vr7mlJfUNDv56Onxxcf+9/fppqjbXmP22tvgeHzuubvhgoXnmp3sr7HUOD/YUlfhiozww8Xdb3Lzzs/dZGnge37mlZjXQ0naT1XutrhNTU1bRW+TAAAHiklEQVR4nO2Ya3OqyhKGuYsEuejaEREFUaPBXFcuS9dOdv7/vzrdA4OArhP3l1N1qt6nKhWmgWHe6ZnuHhUFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2
-install_page_url: http://fd77620e.ngrok.io/
+install_page_url: https://d0e6f62c.ngrok.io
 invoke_name: servicenow
 is_active: 1
-is_production_or_sandbox: 1
+is_production_or_sandbox: 0
 long_description: Application to handle ServiceNow incidents.
 name: Service Now
 privacy_policy_url: https://www.yellowant.com/common/privacy/
 rate_limit: 0.0
 rate_limited: 0
-redirect_uris: http://fd77620e.ngrok.io/yellowant-oauth-redirect/
+redirect_uris: https://d0e6f62c.ngrok.io/yellowant-oauth-redirect/
 short_description: Application to handle ServiceNow incidents.
 user_rate_limit: 0.0
-visibility_scope: 2
-website: http://fd77620e.ngrok.io/
+visibility_scope: 0
+website: https://d0e6f62c.ngrok.io

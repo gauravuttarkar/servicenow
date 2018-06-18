@@ -21,13 +21,10 @@ global ACCESS_TOKEN
 
 def service_now_auth(request):
     global ACCESS_TOKEN
-    print (request.user.id)
+
     code = request.GET.get("code")
     state = request.GET.get("state")
-    print("Auth Code is ",code)
-    print("---------------------------------")
-    print("State is ",state)
-    print("---------------------------------")
+
     servicenow_redirect_state = AppRedirectState.objects.get(state=state)
     ut = servicenow_redirect_state.user_integration
     error = request.GET.get('error', None)
@@ -44,14 +41,11 @@ def service_now_auth(request):
     }
     # Url to which request is to be sent for SM access_token.
     access_token_response = requests.post(url, data=data)
-    print("==============================")
-    print(access_token_response.text)
-    print("==============================")
+
     ACCESS_TOKEN=access_token_response.json()['access_token']
     REFRESH_TOKEN=access_token_response.json()['refresh_token']
     expires_in=access_token_response.json()['expires_in']
-    print('Inside service now')
-    print(ACCESS_TOKEN)
+
 
 
     qut = Servicenow_model.objects.create(user_integration=ut, access_token=ACCESS_TOKEN,
@@ -93,7 +87,7 @@ def request_yellowant_oauth_code(request):
 def yellowant_oauth_redirect(request):
     """Receive the oauth2 code from YA to generate a new user integration"""
 
-    print('Inside yellowant_oauth_redirect')
+
     code = request.GET.get("code")
 
     # the unique string to identify the user for which we will create an integration
@@ -108,10 +102,10 @@ def yellowant_oauth_redirect(request):
                           access_token=None,
                           redirect_uri=settings.YA_REDIRECT_URL)
 
-    print (settings.YA_REDIRECT_URL)
+
     # get the access token for a user integration from YA against the code
     access_token_dict = ya_client.get_access_token(code)
-    print (access_token_dict)
+
 
     access_token = access_token_dict["access_token"]
 
@@ -187,7 +181,7 @@ def api_key(request):
 
     url = ('{}?state={}&response_type=code&client_id={}&redirect_uri={}&client_secret={}'.\
     format("https://"+data["instance"]+".service-now.com/oauth_auth.do", state, data['client_id'], settings.BASE_URL+"service-now-auth/", data['client_secret']))
-    print(url)
+
     return HttpResponse(url, status=200)
 
 

@@ -159,8 +159,6 @@ def get_incident(args,user_integration):
 
     message.attach(attachment)
 
-    # print(user_integration.id)
-    # print(user_integration.yellowant_integration_id)
     return message
 
 
@@ -180,8 +178,7 @@ def states(args,user_integration):
 
 def get_webhook(args,user_integration):
     object = UserIntegration.objects.get(id=user_integration.id)
-    # print(object.yellowant_integration_invoke_name)
-    # print(object.webhook_id)
+
     message = MessageClass()
     message.message_text="Webhook ID"
     attachment = MessageAttachmentsClass()
