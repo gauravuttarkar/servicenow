@@ -79,7 +79,7 @@ class AppRedirectState(models.Model):
     subdomain = models.CharField(max_length=128)
 
 class Servicenow_model(models.Model):
-    user_integration = models.IntegerField(default=0)
+    user_integration = models.IntegerField(default=0, unique=True)
     access_token = models.CharField(max_length=200, default = "default")
     refresh_token = models.CharField(max_length=200, default = "default")
     update_login_flag = models.BooleanField(max_length=2, default=False)
