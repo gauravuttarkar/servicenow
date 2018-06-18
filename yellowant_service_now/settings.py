@@ -92,7 +92,7 @@ elif DEV_ENV == "HEROKU":
 
 INSTALLED_APPS = [
     'lib.yellowant_api',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'lib.web',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -104,6 +104,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'corsheaders.middleware.CorsMiddleware',
