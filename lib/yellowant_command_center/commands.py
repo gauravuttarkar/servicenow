@@ -221,7 +221,7 @@ def change_urgency(args,user_integration):
     response=requests.put(url=url,headers=headers,data=json.dumps(body))
 
     message = MessageClass()
-    message.message_text = "Incident impact changed"
+    message.message_text = "Incident urgency changed"
 
     return message
 
