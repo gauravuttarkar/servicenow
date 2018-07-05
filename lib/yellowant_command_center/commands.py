@@ -30,10 +30,97 @@ def create_incident(args,user_integration):
     }
 
     response = requests.post(url=url, headers=headers,data=json.dumps(body))
-    message=MessageClass()
+    
+    message = MessageClass()
+    if response.status_code == 201:
 
-    message.message_text = "Created Incident"
+        sys_id = response.json()['sys_id']
+
+
+        attachment = MessageAttachmentsClass()
+
+        field1 = AttachmentFieldsClass()
+        field1.title = "Incident Name"
+        field1.value = response.json()["result"]["number"]
+        attachment.attach_field(field1)
+
+        field1 = AttachmentFieldsClass()
+        field1.title = "Created by"
+        field1.value = response.json()["result"]["sys_created_by"]
+        attachment.attach_field(field1)
+
+        field1 = AttachmentFieldsClass()
+        field1.title = "Incident State"
+        field1.value = response.json()["result"]["incident_state"]
+        attachment.attach_field(field1)
+
+        field1 = AttachmentFieldsClass()
+        field1.title = "Description"
+        field1.value = response.json()["result"]["description"]
+        attachment.attach_field(field1)
+
+        field1 = AttachmentFieldsClass()
+        field1.title = "Priority"
+        field1.value = response.json()["result"]["priority"]
+        attachment.attach_field(field1)
+
+        field1 = AttachmentFieldsClass()
+        field1.title = "Impact"
+        field1.value = response.json()["result"]["impact"]
+        attachment.attach_field(field1)
+
+        button = MessageButtonsClass()
+        button.text = "Modify State"
+        button.value = "Modify State"
+        button.name = "Modify State"
+        button.command = {"service_application": str(user_integration.yellowant_integration_id),
+                          "function_name": "modifystate", "data": {"sys_id": sys_id},
+                          "inputs": ["state"]}
+        attachment.attach_button(button)
+
+        button = MessageButtonsClass()
+        button.text = "Change impact"
+        button.value = "Change impact"
+        button.name = "Change impact"
+        button.command = {"service_application": str(user_integration.yellowant_integration_id),
+                          "function_name": "changeimpact", "data": {"sys_id": sys_id},
+                          "inputs": ["impact"]}
+        attachment.attach_button(button)
+
+        button1 = MessageButtonsClass()
+        button1.text = "Close Incident"
+        button1.value = "Close Incident"
+        button1.name = "Close Incident"
+        button1.command = {"service_application": str(user_integration.yellowant_integration_id),
+                           "function_name": "closeincident", "data": {"sys_id": sys_id},
+                           "inputs": ["close_notes", "close_code"]}
+        attachment.attach_button(button1)
+
+        button2 = MessageButtonsClass()
+        button2.text = "Resolve Incident"
+        button2.value = "Resolve Incident"
+        button2.name = "Resolve Incident"
+        button2.command = {"service_application": str(user_integration.yellowant_integration_id),
+                           "function_name": "resolveincident", "data": {"sys_id": sys_id},
+                           "inputs": ["resolve_notes", "close_code"]}
+        attachment.attach_button(button2)
+
+        button3 = MessageButtonsClass()
+        button3.text = "Change priority"
+        button3.value = "Change priority"
+        button3.name = "Change priority"
+        button3.command = {"service_application": str(user_integration.yellowant_integration_id),
+                           "function_name": "changepriority", "data": {"sys_id": sys_id},
+                           "inputs": ["priority"]}
+        attachment.attach_button(button3)
+        attachment.title_link = response.json()['']
+        message.attach(attachment)
+
+        message.message_text = "Created Incident"
+    else:
+        message.message_text = response.text
     return message
+
 
 
 
